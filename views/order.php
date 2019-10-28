@@ -60,7 +60,7 @@
     ?>
 
     <?php
-    component('cart', $data, 'cart__main');
+    component('cart', $data, '__main/cart__main');
     ?>
 
 </div>

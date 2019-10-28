@@ -1,6 +1,6 @@
 <?php
-addScript('/components/cart/js/cart_main');
-addStyle('/components/modal/css/cart__common.css');
+addScript('/components/cart/__main/cart__main');
+addStyle('/components/cart/cart__common');
 ?>
 
 <div class="l-col min-0--12">

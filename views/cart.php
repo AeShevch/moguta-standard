@@ -36,6 +36,6 @@ mgSEO($data);
 
 <div class="l-row">
     <?php
-    component('cart', $data, 'cart__main');
+    component('cart', $data, '__main/cart__main');
     ?>
 </div>

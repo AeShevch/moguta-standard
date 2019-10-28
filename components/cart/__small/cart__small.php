@@ -1,6 +1,6 @@
 <?php
-addScript('/components/cart/js/cart__small');
-addStyle('/components/cart/css/cart__small');
+addScript('/components/cart/__small/cart__small');
+addStyle('/components/cart/__small/cart__small');
 addStyle('/components/cart/css/cart__common');
 ?>
 
