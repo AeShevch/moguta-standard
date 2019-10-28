@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Заполнение корзины аяксом
-    $('body').on('click', '.addToCart', function() {
+    $('body').on('click', '.addToCart', function () {
 
         var productId = $(this).data('item-id');
         transferEffect(productId, $(this), '.product-wrapper');
@@ -18,7 +18,7 @@ $(document).ready(function() {
             data: "updateCart=1&" + request,
             dataType: "json",
             cache: false,
-            success: function(response) {
+            success: function (response) {
 
                 $('.small-cart').show();
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
     });
 
     // Удаление вещи из корзины аяксом
-    $('body').on('click', '.deleteItemFromCart', function() {
+    $('body').on('click', '.deleteItemFromCart', function () {
 
         var $this = $(this);
         var itemId = $this.data('delete-item-id');
@@ -62,18 +62,17 @@ $(document).ready(function() {
             },
             dataType: "json",
             cache: false,
-            success: function(response) {
+            success: function (response) {
                 if ('success' == response.status) {
                     if (response.deliv && response.curr) {
                         var i = 0;
-                        response.deliv.forEach(function(element, index, arr) {
-                            $('.delivery-details-list li:eq('+i+') .deliveryPrice').html('&nbsp;'+element);
-                            if ($('.delivery-details-list input[type=radio]:eq('+i+')').is(':checked')) {
+                        response.deliv.forEach(function (element, index, arr) {
+                            $('.delivery-details-list li:eq(' + i + ') .deliveryPrice').html('&nbsp;' + element);
+                            if ($('.delivery-details-list input[type=radio]:eq(' + i + ')').is(':checked')) {
                                 if (element == 0) {
                                     $('.summ-info .delivery-summ').html('');
-                                }
-                                else{
-                                    $('.summ-info .delivery-summ').html(locale.delivery+' <span class="order-delivery-summ">'+element+' '+response.curr+'</span>');
+                                } else {
+                                    $('.summ-info .delivery-summ').html(locale.delivery + ' <span class="order-delivery-summ">' + element + ' ' + response.curr + '</span>');
                                 }
                             }
                             i++;
@@ -82,7 +81,7 @@ $(document).ready(function() {
                     var table = $('.deleteItemFromCart[data-property="' + property + '"][data-delete-item-id="' + itemId + '"][data-variant="' + $vari + '"]').parents('table');
                     $('.deleteItemFromCart[data-property="' + property + '"][data-delete-item-id="' + itemId + '"][data-variant="' + $vari + '"]').parents('tr').remove();
                     var i = 1;
-                    table.find('.index').each(function() {
+                    table.find('.index').each(function () {
                         $(this).text(i++);
                     });
                     $('.total-sum strong,.total .total-sum span,.mg-desktop-cart .total-sum span,.mg-fake-cart .total-sum span').text(response.data.cart_price_wc);
@@ -125,7 +124,7 @@ $(document).ready(function() {
             element.priceInCart + '</span></li>\
                     </ul>\
                 </td>\
-                <td class="c-table__remove     small-cart-remove"><a href="#" class="deleteItemFromCart" title="'+locale.cartRemove+'" data-delete-item-id="' + element.id +
+                <td class="c-table__remove     small-cart-remove"><a href="#" class="deleteItemFromCart" title="' + locale.cartRemove + '" data-delete-item-id="' + element.id +
             '" data-property="' + element.property +
             '" data-variant="' + element.variantId +
             '">&nbsp;&nbsp;<div class="icon__cart-remove"><svg class="icon icon--remove"><use xlink:href="#icon--remove"></use></svg>&nbsp;&nbsp;</div></a></td>\
@@ -137,6 +136,6 @@ $(document).ready(function() {
         $('.product-cart, .checkout-form-wrapper, .small-cart').hide();
         $('.empty-cart-block').show();
 
-    };
+    }
 
 });

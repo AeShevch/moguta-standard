@@ -35,7 +35,8 @@ component(
         'header',
         array(
                 'menuPages' => $data['menuPages'],
-                'menuCategories' => $data['menuCategories']
+                'menuCategories' => $data['menuCategories'],
+                'cartData' => $data['cartData']
         )
 );
 ?>

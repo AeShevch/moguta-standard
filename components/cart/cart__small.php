@@ -1,6 +1,7 @@
 <?php
 addScript('/components/cart/js/cart__small');
 addStyle('/components/cart/css/cart__small');
+addStyle('/components/cart/css/cart__common');
 ?>
 
 <div class="c-cart mg-desktop-cart">
@@ -11,10 +12,12 @@ addStyle('/components/cart/css/cart__small');
         </div>
         <ul class="c-cart__small--list cart-list">
             <li class="c-cart__small--count">
-                <div class="c-cart__small--text"><?php echo lang('cartCart'); ?> (<span class="countsht"><?php echo $data['cartCount'] ? $data['cartCount'] : 0 ?></span>)</div>
+                <div class="c-cart__small--text">
+                    <?php echo lang('cartCart'); ?>
+                    (<span class="countsht"><?php echo $data['cart_count'] ? $data['cart_count'] : 0 ?></span>)</div>
             </li>
             <li class="c-cart__small--price cart-qty">
-                <span class="pricesht"><?php echo $data['cartPrice'] ? $data['cartPrice'] : 0 ?></span> <?php echo $data['currency']; ?>
+                <span class="pricesht"><?php echo $data['cart_price'] ? $data['cart_price'] : 0 ?></span> <?php echo $data['currency']; ?>
             </li>
         </ul>
     </a>
@@ -27,9 +30,11 @@ addStyle('/components/cart/css/cart__small');
                 <div class="c-table c-table--scroll">
                     <table class="small-cart-table">
 
-                        <?php if (!empty($data['cartData']['dataCart'])) { ?>
+                        <?php
+//                        viewData($da);
+                        if (!empty($data['dataCart'])) { ?>
 
-                            <?php foreach ($data['cartData']['dataCart'] as $item): ?>
+                            <?php foreach ($data['dataCart'] as $item): ?>
                                 <tr>
                                     <td class="c-table__img small-cart-img">
                                         <a href="<?php echo SITE . "/" . (isset($item['category_url']) ? $item['category_url'] : 'catalog/') . $item['product_url'] ?>">
@@ -68,7 +73,7 @@ addStyle('/components/cart/css/cart__small');
                 </div>
                 <ul class="c-table__footer total">
                     <li class="c-table__total total-sum"><?php echo lang('cartPay'); ?>
-                        <span><?php echo $data['cartData']['cart_price_wc'] ?></span>
+                        <span><?php echo $data['cart_price_wc'] ?></span>
                     </li>
                     <li class="checkout-buttons">
                         <a href="<?php echo SITE ?>/cart" class="c-button c-button--link"><?php echo lang('cartLink'); ?></a>

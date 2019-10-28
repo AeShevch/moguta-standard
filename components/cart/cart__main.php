@@ -1,3 +1,8 @@
+<?php
+addScript('/components/cart/js/cart_main');
+addStyle('/components/modal/css/cart__common.css');
+?>
+
 <div class="l-col min-0--12">
     <div class="c-title"><?php echo lang('productCart'); ?></div>
 </div>

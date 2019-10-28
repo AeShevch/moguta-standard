@@ -1,3 +1,7 @@
+<?php
+
+addStyle('/components/modal/css/cart__common.css');
+?>
 <div class="c-title"><?php echo lang('cartTitle'); ?></div>
 <div class="c-table popup-body">
     <table class="small-cart-table">
