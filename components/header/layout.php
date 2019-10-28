@@ -63,7 +63,7 @@
                         <div class="l-header__block">
                             <?php
                             // Компонент всплывающей мини-корзины
-                            component('cart', $data, 'small_cart');
+                            component('cart', $data, 'cart__small');
 
                             // Если в настройках включена опция
                             // «Показывать покупателю сообщение о добавлении товара в корзину»,

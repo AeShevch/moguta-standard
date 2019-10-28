@@ -13,7 +13,7 @@ addStyle('/components/modal/css/style');
             </div>
 
             <?php
-            component('cart', array(), 'popup_cart');
+            component('cart', array(), 'cart__popup');
             ?>
 
         </div>

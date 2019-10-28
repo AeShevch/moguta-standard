@@ -1,6 +1,6 @@
 <?php
-addScript('/components/cart/js/script');
-addStyle('/components/cart/css/style');
+addScript('/components/cart/js/cart__small');
+addStyle('/components/cart/css/cart__small');
 ?>
 
 <div class="c-cart mg-desktop-cart">
