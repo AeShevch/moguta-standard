@@ -1,12 +1,12 @@
 <!-- compare - start -->
 <?php
-addScript('/components/compare/js/page');
+addScript('/components/compare/__main/compare__main');
+addStyle('/components/compare/__main/compare__main');
 ?>
 
 <?php
 if (!empty($data)) { ?>
     <div class="c-compare mg-compare-products js-compare-page">
-
         <!-- top - start -->
         <div class="c-compare__top   mg-compare-left-side">
             <?php if (!empty($_SESSION['compareList'])) { ?>

@@ -13,9 +13,8 @@ $(document).ready(function () {
 
     // Добавляем скролл-бар и сверху и снизу блока сравнения
     function DoubleScroll(element) {
-        console.log(element);
         var scrollbar = document.createElement('div');
-        scrollbar.setAttribute("class", "mg-top-scroll");
+        scrollbar.setAttribute("class", "second-scroll");
         scrollbar.appendChild(document.createElement('div'));
         scrollbar.style.overflow = 'auto';
         scrollbar.style.overflowY = 'hidden';
@@ -28,7 +27,10 @@ $(document).ready(function () {
         element.onscroll = function () {
             scrollbar.scrollLeft = element.scrollLeft;
         };
-        element.parentNode.insertBefore(scrollbar, element);
+        var scrollbarWrap = document.createElement('div');
+        scrollbarWrap.classList.add('second-scroll__wrap');
+        scrollbarWrap.appendChild(scrollbar);
+        element.parentNode.insertBefore(scrollbarWrap, element);
     }
 
     DoubleScroll(scrollContainer[0]);

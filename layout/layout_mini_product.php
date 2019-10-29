@@ -108,39 +108,21 @@
             ?>
         </div>
         <div class="c-goods__footer">
-            <?php
-            if (!isset($data['actionButton'])) {
-                $data['actionButton'] = '';
-            }
+            <div class="c-buy__buttons">
+                <?php
+//                viewData($data['item']);
+                component('cart', $data['item'], '__btn/_add/cart__btn_add');
+                component('compare', $data['item'], '__btn/_add/compare__btn_add');
+                ?>
+            </div>
 
-            if (isset($data['item']['buyButton'])) {
-                if (class_exists('BuyClick') && strpos($data['item']['buyButton'], '[buy-click') === false) {
-                    echo '[buy-click id="' . $data['item']['id'] . '"]';
-                }
-                echo $data['item']['buyButton'];
-            } elseif (isset($data['item'][$data['actionButton']]) || isset($data['item']['actionCompare'])) {
-                echo $data['item'][$data['actionButton']];
-                echo $data['item']['actionCompare'];
-                if (
-                    class_exists('BuyClick') &&
-                    strpos($data['item'][$data['actionButton']], '[buy-click') === false &&
-                    strpos($data['item']['actionCompare'], '[buy-click') === false
-                ) {
-                    echo '[buy-click id="' . $data['item']['id'] . '"]';
-                }
-            } else { ?>
-                <!-- Плагин купить одним кликом-->
-                <?php if (class_exists('BuyClick')): ?>
-                    [buy-click id="<?php echo $data['item']['id'] ?>"]
-                <?php endif; ?>
-                <!--/ Плагин купить одним кликом-->
+            <!-- Плагин купить одним кликом-->
+            <?php if (class_exists('BuyClick')): ?>
+                [buy-click id="<?php echo $data['item']['id'] ?>"]
+            <?php endif; ?>
+            <!--/ Плагин купить одним кликом-->
 
-                <a class="default-btn buy-product"
-                   href="<?php echo SITE ?>/catalog?inCartProductId=<?php echo $data['item']['id']; ?>"
-                   data-item-id="<?php echo $data['item']['id']; ?>">
-                    <?php echo lang('relatedAddButton'); ?>
-                </a>
-            <?php } ?>
+
         </div>
     </div>
 </div>

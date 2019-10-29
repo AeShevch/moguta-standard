@@ -49,7 +49,7 @@
                             <div class="l-header__block max-767--hide">
                                 <?php
                                 // Компонент кнопки сравнения в шапке
-                                component('compare', [], 'header_link');
+                                component('compare', [], '__link/compare__link');
                                 ?>
                             </div>
                         <?php } ?>

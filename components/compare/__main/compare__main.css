@@ -1,0 +1,10 @@
+.second-scroll {
+    margin-bottom: 10px;
+    -ms-flex-preferred-size: 80%;
+    flex-basis: 80%;
+}
+.second-scroll__wrap {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

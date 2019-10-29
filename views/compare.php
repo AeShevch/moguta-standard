@@ -39,5 +39,5 @@ mgSEO($data); $prodIds = array(); $propTable = array(); ?>
 
 <?php
 // Компонент страницы сравнения
-component('compare', $data['catalogItems'], 'page');
+component('compare', $data['catalogItems'], '__main/compare__main');
 ?>

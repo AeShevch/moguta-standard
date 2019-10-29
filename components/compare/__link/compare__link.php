@@ -1,6 +1,6 @@
 <?php
-addStyle('/components/compare/css/style');
-addScript('/components/compare/js/script');
+addStyle('/components/compare/__link/compare__link');
+addScript('/components/compare/js/compare__common');
 ?>
 
 <a class="c-compare__link mg-product-to-compare js-to-compare-link"
@@ -26,11 +26,5 @@ addScript('/components/compare/js/script');
     </div>
 </a>
 
-<div class="c-compare__informer js-compare-informer">
-    <div class="c-compare__informer--content">
-        <svg class="icon icon--check">
-            <use xlink:href="#icon--check"></use>
-        </svg>
-        <?php echo lang('compareAdded'); ?>
-    </div>
-</div>
+<?php component('compare', [], '__informer/compare__informer'); ?>
+
